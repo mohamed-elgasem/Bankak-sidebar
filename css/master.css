@@ -1,0 +1,237 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'poppins' sans-serif;
+  }
+  
+  :root{
+    --body-color: #e4e9f7;
+    --sidebar-color:#fff;
+    --primary-color:#E02224;
+    --primary-color-light: #f6f5ff;
+    --toggle-color: #ddd;
+    --text-color: #707070;
+  }
+  body{
+    min-height: 100vh;
+    background-color: var(--body-color);
+  }
+  ::selection{
+    background-color: var(--primary-color);
+    color: #fff;
+  }
+  body.dark{
+    --body-color:#18191a;
+    --sidebar-color: #242526;
+    --primary-color: #3a3b3c;
+    --primary-color-light: #3a3b3c;
+    --toggle-color: #fff;
+    --text-color: #ccc;  
+  }
+  .sidebar{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 100%;
+    width: 430px;
+    background-color: var(--sidebar-color);
+    transition: var(--tran-05);
+    z-index: 100;
+  
+  }
+  
+  .sidebar li{
+    height: 40px;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    margin-top: 8px;
+  }
+  .sidebar header .image, 
+  .sidebar .icon{
+    min-width: 60px;
+    border-radius: 6px;
+  }
+  .sidebar .icon{
+    min-width: 50px;
+    border-radius: 5px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 10px;
+    color: var(--primary-color);
+  }
+  .sidebar .text, 
+  .sidebar.icon{
+    color: var(--text-color);
+  }
+  .sidebar .text {
+    font-size: 15px;
+    font-weight: 500;
+    white-space: nowrap;
+    opacity: 1;  
+  }
+  .sidebar header{
+    background-color: var(--primary-color);
+    padding: 7px 0 7px 0;
+    margin-bottom: 20px;
+  }
+  .sidebar header .image-text{
+    display: flex;
+    align-items: center;
+    direction: rtl;
+  }
+  .sidebar header .logo-text{
+    display: flex;
+    flex-direction: column;
+    margin-right: 20px;
+    color: white;
+  }
+  header .image-text .name{
+    margin-top: 2px;
+    font-size: 18px;
+    font-weight: 700;
+  }
+  header .image-text .profession{
+    font-size: 13px;
+  }
+  header .image-text .time{
+    font-size: 13px;
+  }
+  .sidebar header .image img{
+    width: 70px;
+    border-radius: 50px;
+    margin-right: 20px;
+  }
+  body.dark .sidebar header .toggle{
+    color: var(--text-color);
+  }
+  .sidebar li a{
+    direction: rtl;
+    list-style: none;
+    height: 100%;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: var(--tran-03);
+  }
+  .sidebar li a:hover{
+    background-color: var(--primary-color);
+  }
+  .sidebar li a:hover .icon,
+  .sidebar li a:hover .text{
+    color: var(--sidebar-color);
+  }
+  body.dark .sidebar li a:hover .icon,
+  body.dark .sidebar li a:hover .text{
+    color: var(--text-color);
+  }
+  .menu-bar::-webkit-scrollbar{
+    display: none;
+  }
+  .sidebar .menu-bar .mode{
+    border-radius: 6px;
+    background-color: var(--primary-color-light);
+    position: relative;
+    padding: 30px;
+  }
+  .sidebar .menu-bar{
+    height: calc(100% -55%);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    overflow-y: scroll;
+  }
+  .menu-bar .mode .sun-moon label{
+    height: 50px;
+    width: 60px;
+  }
+  .menu-bar .mode .moon{
+    margin-left: -22px;
+  }
+  .menu-bar .mode .sun{
+    margin-left: -22px;
+    color: #fff;
+  }
+  .mode .sun-moon label{
+    position: absolute;
+  }
+  .mode .sun-moon label .sun{
+    opacity: 0;
+  }
+  body.dark .mode .sun-moon label .sun{
+    opacity: 1;
+  }
+  body.dark .mode .sun-moon label .moon{
+    opacity: 0;
+  }
+  .menu-bar .bottom-content{
+    margin-top: -22px;
+  }
+  .menu-bar .bottom-content .toggle-switch{
+    position: absolute;
+    right: 0;
+    height: 100%;
+    min-width: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+  .toggle-switch .switch{
+    position: relative;
+    height: 22px;
+    width: 40px;
+    border-radius: 25px;
+    background-color: var(--toggle-color);
+  }
+  .switch::before{
+    content: '';
+    position: absolute;
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    background-color: var(--sidebar-color);
+  }
+  body.dark .switch::before{
+    left: 20px;
+  }
+  
+  
+  
+  
+  
+  /* Small  */
+  @media (min-width: 768px){
+    .mobile{
+      width: 30%;
+    }  
+  }
+  
+  /* Medium */
+  @media (min-width: 992px){
+    .mobile{
+      width: 30%;
+    }  
+  }
+  
+  /* Large  */
+  @media (min-width: 1200px){
+    .mobile{
+      width: 30%;
+    }  
+  }
+  
+  
+  
+  
